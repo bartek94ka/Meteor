@@ -95,6 +95,14 @@
     line-height: 2.4em;
     padding-right: 1.25em;
   }
+
+  .player .changePoint {
+    margin-top: 12px;
+    display: block;
+    float: right;
+    line-height: 2.4em;
+    padding-right: 1.25em;
+  }
   
   .player.selected {
     background-color: #fefff4;

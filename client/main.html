@@ -20,6 +20,7 @@
   <ol class="leaderboard">
     {{#each players}}
       {{> player}}
+      
     {{/each}}
   </ol>
 
@@ -36,7 +37,10 @@
 <template name="player">
   <li class="player {{selected}}">
     <span class="name">{{name}}</span>
+    <img class="changePoint increase" src="icons/plus_circle.png" alt="">
+    <img class="changePoint decrease" src="icons/minus-circle.png" alt="">
     <span class="score">{{score}}</span>
+    
   </li>
 </template>
 

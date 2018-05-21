@@ -35,6 +35,18 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.player.events({
+    'click .increase': function(){
+      Players.update(Session.get("selectedPlayer"), {$inc: {score: 1}});
+    }
+  });
+
+  Template.player.events({
+    'click .decrease': function(){
+      Players.update(Session.get("selectedPlayer"), {$inc: {score: -1}});
+    }
+  })
+
   Template.addPlayer.events({
     'submit form': function (event) {
       event.preventDefault();
