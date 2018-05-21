@@ -10,6 +10,9 @@
     <h1 class="title">Leaderboard</h1>
     <div class="subtitle">Select a scientist to give them points</div>
     {{> leaderboard}}
+
+    <br>
+    {{> addPlayer}}
   </div>
 </body>
 
@@ -35,4 +38,12 @@
     <span class="name">{{name}}</span>
     <span class="score">{{score}}</span>
   </li>
+</template>
+
+
+<template name="addPlayer">
+  <form class="details">
+    <input type="text" class="name" name="playerName">
+    <input type="submit" class="inc" value="Add Player">
+  </form>
 </template>
