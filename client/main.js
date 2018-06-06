@@ -4,7 +4,6 @@ import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 
 Players = new Mongo.Collection("players");
-// NewPlayer = new Mongo.
 
 if (Meteor.isClient) {
   Template.leaderboard.helpers({
@@ -45,7 +44,14 @@ if (Meteor.isClient) {
     'click .decrease': function(){
       Players.update(Session.get("selectedPlayer"), {$inc: {score: -1}});
     }
-  })
+  });
+
+  Template.player.events({
+    'click .remove': function(){
+      var player = Players.findOne(Session.get("selectedPlayer"));
+      Players.remove({_id:player._id});
+    }
+  });
 
   Template.addPlayer.events({
     'submit form': function (event) {
